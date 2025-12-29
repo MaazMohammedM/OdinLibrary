@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odin Library</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./index.js" async></script>
+</head>
+<body>
+    <dialog>
+         <button>Close</button>
+  <form action="" method="dialog">
+    <div class="formBlock">
+        <label for="title">Book Title</label>
+    <input type="text" name="bookTitle" id="title" required>
+    </div>
+    <div class="formBlock">
+        <label for="author">Book Author</label>
+    <input type="text" name="bookAuthor" id="author" required>
+    </div>
+    <div class="formBlock">
+        <label for="pages">Number of Pages</label>
+    <input type="number" name="bookPages" id="pages" required>
+    </div>
+    <div class="formBlock">
+        <input type="radio" name="readingStatus" id="read" value="true" required>
+       <label for="read">Read</label>
+        <input type="radio" name="readingStatus" id="notRead" value="false">
+       <label for="notRead">Not Read</label>
+    </div>
+    <button type="submit" class="formSubmitBtn">Add Book in Library</button>
+  </form>
+ 
+</dialog>
+<button class="dialogBtn">Add Book</button>
+    <div class="container"></div>
+    
+    
+</body>
+</html>
