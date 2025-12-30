@@ -119,6 +119,3 @@ function createCard(book){
 
 
 
-addBookToLibrary('ATTACK ON TITAN','Maaz',250,false);
-addBookToLibrary('The Adventures of Huckleberry Finn','Maaz',250,false);
-render()
