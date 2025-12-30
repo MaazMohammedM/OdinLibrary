@@ -8,32 +8,42 @@
     <script src="./index.js" async></script>
 </head>
 <body>
+    <header>
+        <p>My Library</p>
+        <button class="dialogBtn">Add Book</button>
+    </header>
     <dialog>
-         <button>Close</button>
+         <button class="closeBtn">❌</button>
   <form action="" method="dialog">
     <div class="formBlock">
         <label for="title">Book Title</label>
-    <input type="text" name="bookTitle" id="title" required>
+        
+    <input type="text" name="bookTitle" id="title" required min="3" max="100">
     </div>
     <div class="formBlock">
         <label for="author">Book Author</label>
-    <input type="text" name="bookAuthor" id="author" required>
+    <input type="text" name="bookAuthor" id="author" required min="3" max="100">
     </div>
     <div class="formBlock">
         <label for="pages">Number of Pages</label>
-    <input type="number" name="bookPages" id="pages" required>
+    <input type="number" name="bookPages" id="pages" required min="10" max="1000">
     </div>
     <div class="formBlock">
-        <input type="radio" name="readingStatus" id="read" value="true" required>
+        <div>
+            <input type="radio" name="readingStatus" id="read" value="true" required>
        <label for="read">Read</label>
-        <input type="radio" name="readingStatus" id="notRead" value="false">
+        </div>
+        
+        <div>
+            <input type="radio" name="readingStatus" id="notRead" value="false">
        <label for="notRead">Not Read</label>
+        </div>
     </div>
-    <button type="submit" class="formSubmitBtn">Add Book in Library</button>
+    <button type="submit" class="formSubmitBtn">Add Book</button>
   </form>
  
 </dialog>
-<button class="dialogBtn">Add Book</button>
+
     <div class="container"></div>
     
     
