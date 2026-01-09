@@ -15,24 +15,27 @@ closeButton.addEventListener("click", () => {
 
 let myLibrary = [];
 
-function Book(title, author, pages, read) {
-    if (!new.target) {
-        throw Error("You must use the 'new' operator to call the constructor");
+
+
+class Book{
+    constructor(title,author,pages,read){
+        this.id = crypto.randomUUID();
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
     }
-    this.id = crypto.randomUUID();
-    this.title = title,
-        this.author = author,
-        this.pages = pages,
-        this.read = read
+
+    toggleRead(){
+        if(this.read === "true"){
+        this.read = "false"
+    } else{
+        this.read = "true"
+    }
+    }
 }
 
-Book.prototype.toggleRead = function () {
-    if(this.read === true){
-        this.read = false
-    } else{
-        this.read = true
-    }
-}
+
 
 function addBookToLibrary(title, author, pages, read) {
     myLibrary.push(new Book(title, author, pages, read))
@@ -97,11 +100,11 @@ function createCard(book){
         title.innerText = `${book.title}`;
         author.innerText = `${book.author}`;
         pages.innerText = `${book.pages} Pages`;
-        readBtn.innerText = `${book.read === true ? '✅' : '❌'}`;
+        readBtn.innerText = `${book.read === "true" ? '✅' : '❌'}`;
         deleteBtn.innerText = '🗑️';
         readBtn.addEventListener('click', function () {
             book.toggleRead();
-            readBtn.innerText = `${book.read === true ?  '✅' : '❌'}`;
+            readBtn.innerText = `${book.read === "true" ?  '✅' : '❌'}`;
         })
 
         deleteBtn.addEventListener('click',function(e){
