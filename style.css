@@ -186,4 +186,19 @@ form .formBlock {
     font-weight: bold;
 }
 
+input:user-invalid{
+  border: 1px solid darkred;
+  background-color: lightcoral;
+}
+
+input:user-invalid:focus{
+  outline: none;
+}
+
+.error-text{
+  color: lightcoral;
+  font-family: "Atkinson Hyperlegible Mono", sans-serif;
+  font-weight: bold;
+  font-size: 0.75rem;
+}
 

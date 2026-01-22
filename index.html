@@ -1,51 +1,84 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Odin Library</title>
-    <link rel="stylesheet" href="./style.css">
-    <script src="./index.js" async></script>
-</head>
-<body>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./index.js" defer type="module"></script>
+  </head>
+  <body>
     <header>
-        <p>My Library</p>
-        <button class="dialogBtn">Add Book</button>
+      <p>My Library</p>
+      <button class="dialogBtn">Add Book</button>
     </header>
     <dialog>
-         <button class="closeBtn">❌</button>
-  <form action="" method="dialog">
-    <div class="formBlock">
-        <label for="title">Book Title</label>
-        
-    <input type="text" name="bookTitle" id="title" required min="3" max="100">
-    </div>
-    <div class="formBlock">
-        <label for="author">Book Author</label>
-    <input type="text" name="bookAuthor" id="author" required min="3" max="100">
-    </div>
-    <div class="formBlock">
-        <label for="pages">Number of Pages</label>
-    <input type="number" name="bookPages" id="pages" required min="10" max="1000">
-    </div>
-    <div class="formBlock">
-        <div>
-            <input type="radio" name="readingStatus" id="read" value="true" required>
-       <label for="read">Read</label>
+      <button class="closeBtn">❌</button>
+      <form novalidate method="dialog">
+        <div class="formBlock">
+          <label for="title">Book Title</label>
+
+          <input
+            type="text"
+            name="bookTitle"
+            id="title"
+            required
+            minlength="3"
+            maxlength="50"
+          />
+          <span class="error-text" aria-live="polite"></span>
         </div>
-        
-        <div>
-            <input type="radio" name="readingStatus" id="notRead" value="false">
-       <label for="notRead">Not Read</label>
+        <div class="formBlock">
+          <label for="author">Book Author</label>
+          <input
+            type="text"
+            name="bookAuthor"
+            id="author"
+            required
+            minlength="10"
+            maxlength="50"
+          />
+           <span class="error-text" aria-live="polite"></span>
         </div>
-    </div>
-    <button type="submit" class="formSubmitBtn">Add Book</button>
-  </form>
- 
-</dialog>
+        <div class="formBlock">
+          <label for="pages">Number of Pages</label>
+          <input
+            type="number"
+            name="bookPages"
+            id="pages"
+            required
+            min="10"
+            max="1000"
+          />
+          <span class="error-text" aria-live="polite"></span>
+        </div>
+        <div class="formBlock">
+          <div>
+            <input
+              type="radio"
+              name="readingStatus"
+              id="read"
+              value="true"
+              required
+            />
+            <label for="read">Read</label>
+          </div>
+
+          <div>
+            <input
+              type="radio"
+              name="readingStatus"
+              id="notRead"
+              value="false"
+            />
+            <label for="notRead">Not Read</label>
+          </div>
+          <span class="error-text" aria-live="polite"></span>
+        </div>
+        <button type="submit" class="formSubmitBtn">Add Book</button>
+      </form>
+    </dialog>
 
     <div class="container"></div>
-    
-    
-</body>
+  </body>
 </html>

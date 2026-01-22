@@ -1,9 +1,11 @@
+import "./form.js"
+import { Validator } from "./form.js";
+
 const dialog = document.querySelector("dialog");
 const showButton = document.querySelector(".dialogBtn");
 const closeButton = document.querySelector("dialog button");
 let container = document.querySelector('.container');
 let form = document.querySelector("dialog form");
-let titleError = document.getElementById('#titleError');
 
 showButton.addEventListener("click", () => {
     dialog.showModal();
@@ -11,6 +13,7 @@ showButton.addEventListener("click", () => {
 
 closeButton.addEventListener("click", () => {
     dialog.close();
+    form.reset();
 });
 
 let myLibrary = [];
@@ -41,10 +44,12 @@ function addBookToLibrary(title, author, pages, read) {
     myLibrary.push(new Book(title, author, pages, read))
 }
 
-let formSubmitBtn = document.querySelector('.formSubmitBtn');
+
 form.addEventListener('submit', function (e) {
     e.preventDefault()
-
+    if(!Validator()) {
+        return
+    }
     let title = document.getElementById('title').value.trim();
     let author = document.getElementById('author').value.trim();
     let numberOfPages = +document.getElementById('pages').value;
